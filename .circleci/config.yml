@@ -33,8 +33,6 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
-            pip install pytest
-            pip install pytest-django
 
       - save_cache:
           paths:
@@ -52,6 +50,16 @@ jobs:
             . venv/bin/activate
             python manage.py test
             py.test
+
+      - run:
+          name: run coverage
+          command: |
+            . venv/bin/activate
+            cd tests
+            coverage run test_urls.py
+            coverage report
+            coverage run test_views.py
+            coverage report
 
       - store_artifacts:
           path: test-reports
