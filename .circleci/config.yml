@@ -34,6 +34,7 @@ jobs:
             . venv/bin/activate
             pip install -r requirements.txt
             pip install pytest
+            pip install pytest-django
 
       - save_cache:
           paths:
@@ -50,7 +51,7 @@ jobs:
           command: |
             . venv/bin/activate
             python manage.py test
-            pytest
+            py.test
 
       - store_artifacts:
           path: test-reports
