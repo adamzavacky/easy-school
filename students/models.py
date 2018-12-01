@@ -15,7 +15,12 @@ def next_month():
     month = date.today().month+1
     year = date.today().year
     day = 1
-    return date(year, month, day)
+    months = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    if month in months:
+        return date(year, month, day)
+    else:
+        pass
+
 
 def user_directory_path(instance, filename):
     # file will be uploaded to MEDIA_ROOT/user_<id>/<filename>

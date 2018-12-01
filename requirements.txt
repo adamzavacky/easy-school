@@ -1,3 +1,4 @@
+mixer
 Django>=2.1.2
 django-filter==2.0.0
 djangorestframework==3.8.2
