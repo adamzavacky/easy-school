@@ -4,10 +4,6 @@
 #
 version: 2
 jobs:
-  dependencies:
-    pre:
-      - pip install pytest
-
   build:
     docker:
       # specify the version you desire here
@@ -37,6 +33,7 @@ jobs:
             python3 -m venv venv
             . venv/bin/activate
             pip install -r requirements.txt
+            pip install pytest
 
       - save_cache:
           paths:
