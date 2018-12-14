@@ -30,6 +30,7 @@ jobs:
       - run:
           name: run coverage before tests
           command: |
+            . venv/bin/activate
             cd tests
             coverage run test_urls.py
             coverage report
@@ -46,6 +47,7 @@ jobs:
       - run:
           name: run coverage after tests
           command: |
+            . venv/bin/activate
             cd tests
             coverage run test_urls.py
             coverage report
