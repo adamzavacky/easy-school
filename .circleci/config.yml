@@ -28,16 +28,6 @@ jobs:
           key: v1-dependencies-{{ checksum "requirements.txt" }}
 
       - run:
-          name: run coverage before tests
-          command: |
-            . venv/bin/activate
-            cd tests
-            coverage run test_urls.py
-            coverage report
-            coverage run test_views.py
-            coverage report
-
-      - run:
           name: run tests
           command: |
             . venv/bin/activate
@@ -45,7 +35,7 @@ jobs:
             py.test
 
       - run:
-          name: run coverage after tests
+          name: run coverage
           command: |
             . venv/bin/activate
             cd tests
